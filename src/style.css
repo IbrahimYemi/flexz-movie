@@ -138,7 +138,7 @@ header .fa {
   background: rgba(0, 0, 0, 0.5);
   color: #fefefe;
   font-size: 20px;
-  width: max-content;
+  width: auto;
   padding: 10px;
   position: absolute;
   margin: auto;
@@ -323,12 +323,11 @@ header .fa {
   border-radius: 5px;
 }
 
-
 .about-me .aboutme-image {
   text-align: center;
   padding: 20px;
 }
- 
+
 .about-me .hire-me-text {
   margin: auto;
   text-decoration: none;
@@ -385,10 +384,9 @@ header .fa {
   font-style: italic;
 }
 
-
 /* media */
-@media screen and (max-width:600px){
-  .about-me{
-    flex-direction:column;
+@media screen and (max-width: 600px) {
+  .about-me {
+    flex-direction: column;
   }
 }
