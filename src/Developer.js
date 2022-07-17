@@ -35,7 +35,21 @@ export default function Developer() {
           </a>
         </div>
         <div className="about-app">
-          how i created it. the api and the resources
+          This react application is created using create react app on the
+          stackblitz platform, my system is not powerful enough to run the
+          install node npm so i use stackblitz as an alternative for my
+          projects.
+          <br />
+          This application is getting its movie details from the movieDB API
+          where i made use of the movie poster, release date, title, rating, and
+          the general overview of the movie. I use react state to set the front
+          page display image and use the useEffect function to manage my side
+          effect.
+          <br />
+          The rating is set to color red for any value that is below 7 and
+          orange for all the values above or equal to 7. Get in touch with me
+          and lets work together! I am open for job oppurtunities and
+          reommendation, thanks.
         </div>
       </div>
     </div>
