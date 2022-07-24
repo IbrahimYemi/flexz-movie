@@ -4,6 +4,7 @@ import { Modal, show, Button } from 'react-bootstrap';
 export default function Movies() {
   const [movieData, setMovieData] = React.useState([]);
   const [current, setCurrent] = useState(1);
+  const [query, setQuery] = useState('');
 
   const API_KEY = 'api_key=282292c1d01116b3d3ccf1c8c40cf303';
   const BASE_URL = 'https://api.themoviedb.org/3';
@@ -18,7 +19,7 @@ export default function Movies() {
       .then((res) => res.json())
       .then((data) => setMovieData(data.results));
   }, []);
-  console.log(movieData);
+  
   const [show, setShow] = useState(false);
   const [activeItem, setActiveItem] = useState({});
   const handleShow = (item) => {
@@ -76,8 +77,41 @@ export default function Movies() {
       NO MOVIE IS AVAILABLE, CHECK YOUR NETWORK AND TRY AGAIN
     </div>
   );
+
+  const searchMovie = async (e) => {
+    e.preventDefault();
+    try {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=bcc4ff10c2939665232d75d8bf0ec093&query=${query}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      {
+        query.length > 0 && setMovieData(data.results);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const changeHandler = (e) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <>
+      <form className="d-flex" onSubmit={searchMovie} autoComplete="off">
+        <input
+          type="search"
+          placeholder=" . . . search"
+          className="me-2"
+          aria-label="search"
+          name="query"
+          value={query}
+          onChange={changeHandler}
+        />
+        <button variant="secondary" type="submit">
+          Search
+        </button>
+      </form>
       <div className="card-holder">
         {!movieData.lenght > 0 ? cards : not_found}
       </div>

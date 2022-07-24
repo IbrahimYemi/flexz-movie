@@ -28,10 +28,34 @@ h2 {
   text-align: center;
 }
 
-.lightroom {
-  background: var(--white);
-  color: var(--font1);
+form {
+  display: flex;
+  align-items: center;
   background: var(--secondary);
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+form input {
+  border: none;
+  outline: none;
+  color: #fefefe;
+  padding-left: 8px;
+  background: none;
+}
+
+form input::placeholder {
+  color: #ddd;
+}
+
+form button {
+  border: none;
+  background: #291902;
+  color: #fefefe;
+  padding: 4px;
+  border-radius: 2px;
 }
 
 /* BODY STYLING */
@@ -258,12 +282,12 @@ header .fa {
 .modal {
   position: fixed;
   z-index: 0;
-  left: 0;
+  height: 100vh;
   top: 0;
-  right: 0;
   bottom: 0;
-  color: var(--font1);
-  background-color: var(--font2); /* Black fallback color */
+  width: 100vw;
+  color: var(--font2);
+  background-color: var(--font1); /* Black fallback color */
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   padding: 15px;
@@ -332,7 +356,7 @@ header .fa {
 .about-me .hire-me-text {
   margin: auto;
   text-decoration: none;
-  color: var(--font1);
+  color: var(--font2);
   font-size: 20px;
 }
 
@@ -365,7 +389,7 @@ header .fa {
   padding: 0 10px;
   border-radius: 10%;
   margin: 10px;
-  color: var(--font1);
+  color: var(--font2);
 }
 
 .social .highlight:hover {
