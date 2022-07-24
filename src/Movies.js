@@ -19,7 +19,7 @@ export default function Movies() {
       .then((res) => res.json())
       .then((data) => setMovieData(data.results));
   }, []);
-  
+
   const [show, setShow] = useState(false);
   const [activeItem, setActiveItem] = useState({});
   const handleShow = (item) => {
